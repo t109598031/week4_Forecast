@@ -57,7 +57,7 @@ for doc in data:
         if labels['Name'] =='Person':
             personCount = len(labels['Instances'])
     dateTime = datetime.strptime(doc['_source']['eventTimestamp'],"%Y-%m-%dT%H:%M:%SZ")
-    dateTimeFormat = dateTime.strftime("%Y-%m-%dT%H:%M:%SZ")
+    dateTimeFormat = dateTime.strftime("%Y-%m-%d %H:%M:%SZ")
     csv.append([dateTimeFormat,personCount,doc['_source']['sourceId']])
    
 csv_pd = pd.DataFrame(csv)
