@@ -40,12 +40,12 @@ def elasticsearchQueryGetMatchAll(es_url,index_name,num):
     return result['hits']['hits']
     
     
-response = requests.get("{es_url}/_cat/count/{index_name}".format(es_url = elasticsearchUrl,index_name = elasticsearchIndex),auth=("Max","@Max0308"))
+response = requests.get("{es_url}/_cat/count/{index_name}".format(es_url = elasticsearchUrl,index_name = elasticsearchIndex),auth=(es_AN,es_password))
 docCount = int(re.split('\s',response.text)[2])
 data = []
 start = 0
 for doc in range(int(docCount/50)+1):
-    data += elasticsearchQueryGetMatchAll(elasticsearchUrl,elasticsearchIndex,50,start)
+    data += elasticsearchQueryGetMatchAll(elasticsearchUrl,elasticsearchIndex,start)
     start+=50
     
     
