@@ -55,7 +55,7 @@ def main():
     
     while True:
         try:
-            channel = pafy.new('https://www.youtube.com/watch?v=WHeYEZIUbZQ')
+            channel = pafy.new('https://www.youtube.com/watch?v=2e4PJSiXfPE')
             streamPort = channel.getbest(preftype="mp4").url 
             videoSource = cv2.VideoCapture(streamPort)
 
@@ -86,7 +86,7 @@ def main():
                 nowString = eventTimestamp.strftime("%Y-%m-%dT%H:%M:%SZ")
                 print(nowString)
                 data = {
-                    "sourceId":"東區樂成宮",
+                    "sourceId":"大甲鎮瀾宮",
                     "response": response,
                     "eventTimestamp": nowString
 
